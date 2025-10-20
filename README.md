@@ -1,68 +1,112 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Quiz App
 
-## Available Scripts
+A simple and interactive quiz application built with **React**, **Redux**, and **Firebase Firestore**.  
+The app dynamically fetches questions from the [Open Trivia Database (opentdb.com)](https://opentdb.com/) and stores player scores in Firestore.
 
-In the project directory, you can run:
+**Note:** Please don’t mind the UI — it’s kept simple and built using [MDBootstrap (Material Design)](https://mdbootstrap.com/docs/react/).
 
-### `npm start`
+---
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![Quiz App Screenshot](quizapp.png)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Features
 
-### `npm test`
+- Fetches trivia questions from the [OpenTDB API](https://opentdb.com/api_config.php)
+- Global state management with **Redux**
+- User authentication via **Firebase Authentication (Email & Password)**
+- Stores and retrieves quiz scores using **Firebase Firestore**
+- Interactive notifications using [SweetAlert2](https://sweetalert2.github.io/) and [IziToast](https://github.com/marcelodolza/iziToast)
+- UI built with **React** and **MDBootstrap**
+- Real-time updates and smooth transitions
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Tech Stack
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| Technology                  | Description                                          |
+| --------------------------- | ---------------------------------------------------- |
+| **React**                   | Front-end framework for building the UI              |
+| **Redux**                   | For managing quiz state and user data globally       |
+| **Firebase Firestore**      | Cloud NoSQL database for storing quiz results        |
+| **Firebase Authentication** | Handles user sign-in with Email and Password         |
+| **SweetAlert2**             | Beautiful alert and confirmation modals              |
+| **IziToast**                | Lightweight, customizable toast notifications        |
+| **MDBootstrap**             | Material Design Bootstrap framework used for styling |
+| **OpenTDB API**             | Source of trivia questions                           |
+| **Axios / Fetch API**       | For fetching questions from the OpenTDB endpoint     |
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Installation & Setup
 
-### `npm run eject`
+### 1. Clone the repository
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+git clone https://github.com/m-antoni/quiz-app.git
+cd quiz-app
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 2. Install dependencies
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+npm install
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### 3. Create a Firebase project
 
-## Learn More
+- Go to [Firebase Console](https://console.firebase.google.com/)
+- Create a new project
+- Navigate to **Project Settings → Your apps → SDK setup and configuration**
+- Copy your Firebase config object — you’ll use it in your `.env` file
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Environment Variables
 
-### Code Splitting
+Create a `.env` file in the **root directory** of your project and add the following:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+```bash
+# OpenTDB API
+REACT_APP_API_ROOT="https://opentdb.com/api.php"
 
-### Analyzing the Bundle Size
+# Firebase Credentials
+REACT_APP_API_KEY=""
+REACT_APP_AUTH_DOMAIN=""
+REACT_APP_DATABASE_URL=""
+REACT_APP_PROJECT_ID=""
+REACT_APP_STORAGE_BUCKET=""
+REACT_APP_MESSAGING_SENDER_ID=""
+REACT_APP_APP_ID=""
+REACT_APP_MEASUREMENT_ID=""
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+**Note:**  
+You can find these Firebase keys by going to:  
+**Firebase Console → Project Settings → Your Apps → SDK Setup & Configuration → Config object**
 
-### Making a Progressive Web App
+---
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+### 4. Start the app
 
-### Advanced Configuration
+```bash
+npm start
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+The app will run on [http://localhost:3000](http://localhost:3000).
 
-### Deployment
+---
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+## API Reference
 
-### `npm run build` fails to minify
+**Open Trivia DB** — [https://opentdb.com/api_config.php](https://opentdb.com/api_config.php)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Example API endpoint used:
+
+```
+https://opentdb.com/api.php?amount=10&category=18&type=multiple
+```
+
+## Author
+
+**Michael Antoni**  
+[GitHub Profile](https://github.com/m-antoni)
