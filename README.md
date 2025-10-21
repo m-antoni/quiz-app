@@ -110,5 +110,6 @@ https://opentdb.com/api.php?amount=10&category=18&type=multiple
 
 ## Author
 
-**Michael Antoni**  
-[GitHub Profile](https://github.com/m-antoni)
+**Michael B. Antoni**  
+LinkedIn: [https://linkedin.com/in/m-antoni](https://linkedin.com/in/m-antoni)  
+Email: michaelantoni.tech@gmail.com
